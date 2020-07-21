@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Media Optimzation Demo</title>
+</head>
+<body onload="init()">
+<script type='text/javascript' src="./script.js">
+</script>
+
+<div id="images">
+<h1>Image Example</h1>
+<div>
+<picture>
+<img src="assets/img.webp" alt="Your Browser Does Not Support WebP" onerror="imageNotSupported('webp')"/>
+<br>
+ <caption>WebP Image</caption>
+</picture>
+<br>
+<label id="webp-direct-caption"></label>
+</div>
+<br>
+
+<div>
+<picture>
+<img src="assets/img.jpg" alt="Your Browser Does Not Support JPG" onerror="imageNotSupported('jpg')"/>
+<br>
+<caption>JPG Image</caption>
+</picture>
+<br>
+<label id="jpg-direct-caption"></label>
+</div>
+<br>
+
+<picture>
+  <source srcset="assets/img.webp" type="image/webp">
+  <source srcset="assets/img.jpg" type="image/jpeg"> 
+  <img src="assets/img.jpg" alt="Alt Text!">
+  <br>
+  <caption>This Image will be in WebP if your browser supports it</caption>
+</picture>
+<br>
+<label id="dynamic-direct-caption"></label>
+</div>
+<br>
+
+<div id="videos">
+<h1>Video Example</h1>
+<label>Video Source: <a href="http://techslides.com/sample-webm-ogg-and-mp4-video-files-for-html5">techslides</a></label>
+<br>
+<br>
+<div>
+<video controls src="./assets/video.webm" alt="Your Browser Does Not Support WebM" onerror="videoNotSupported('webm')" onloadeddata="dynamicLoad()"></video>
+<br>
+<caption>WebM Video</caption>
+<br>
+<label id="webm-direct-caption"></label>
+</div>
+<br>
+<div>
+<video controls src="./assets/video.mp4" alt="Your Browser Does Not Support MP4" onerror="videoNotSupported('mp4')"></video>
+<br>
+<caption>MP4 Video</caption>
+<br>
+<label id="mp4-direct-caption"></label>
+<br>
+</div>
+<div>
+<br>
+<video controls>
+  <source src="./assets/video.webm" type="video/webm">
+  <source src="./assets/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<br>
+  <caption>This Video will be in WebM if your browser supports it</caption>
+<br>
+<label id="dynamic-vid-direct-caption"></label>
+</div>
+
+</div>
+<br>
+</body>
+</html>
